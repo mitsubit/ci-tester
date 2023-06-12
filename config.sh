@@ -1,10 +1,10 @@
 #!/bin/bash 
 
 # Default GMS flags sets (Override the values on lineage_xxx.mk)
-export WITH_GMS=true
-export TARGET_CORE_GMS=false
-export TARGET_CORE_GMS_EXTRAS=true
-export TARGET_USE_GOOGLE_TELEPHONY=true
+export WITH_GMS=0
+#export TARGET_CORE_GMS=false
+#export TARGET_CORE_GMS_EXTRAS=true
+#export TARGET_USE_GOOGLE_TELEPHONY=true
 
 
 export TARGET="recoveryimage"
