@@ -4,14 +4,25 @@ env:
 
 task:
   timeout_in: 30m 
-  name: "CI Docker Test"
+  name: "CI Docker Kernel Test"
   container:
       image: ghcr.io/ozipoetra/docker:main
       cpu: 2
-      memory: 4
-  test_script:
-      - repo
-      - echo "Repo Test Finished"
-  apt_script:
-      - sudo apt update
-      - echo "Apt Test Finished"
+      memory: 8
+  clone_script:
+      - cd ~
+      - ccache -M 10G
+      - wget https://github.com/mitsu00/build_test/releases/download/clang/clang.zip && unzip clang.zip -d clang && rm clang.zip
+      - git clone https://github.com/ozipoetra/oc_a13r -b a13r --depth=1 --recursive kernel
+      - echo "Clone Finished"
+  kernel_script:
+      - cd ~/kernel
+      - pwd && ls -al
+      - export KBUILD_BUILD_HOST=ozip.my.id
+      - export KBUILD_BUILD_USER=ozipoetra
+      - export PATH=~/clang/bin:$PATH
+      - export ARCH=arm64
+      - export SUBARCH=arm64
+      - make O=out ARCH=arm64 merlin_defconfig
+      - make -j$(nproc --all) O=out ARCH=arm64 CC=clang READELF=llvm-readelf OBJCOPY=llvm-objcopy AS=llvm-as LD=ld.lld NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+      - echo "Kernel Build Test Finished"
