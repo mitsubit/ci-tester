@@ -1,28 +1,13 @@
 #!/bin/bash
-
-# Source Configs
-source $CONFIG
-
-# Change to the Source Directry
 cd ~
 
-# Set-up ccache
-if [ -z "$CCACHE_SIZE" ]; then
-    ccache -M 10G
-else
-    ccache -M ${CCACHE_SIZE}
-fi
-
-echo " "
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=ozipoetra
-export BUILD_HOSTNAME=ozip.my.id
-export TZ=Asia/Jakarta #put before last build command
+export BUILD_USERNAME=ozip
+export BUILD_HOSTNAME=ozip
+export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-mka sepolicy
-mka bootimage
-mka init
+mka bacon
 
 # Exit
 exit 0
