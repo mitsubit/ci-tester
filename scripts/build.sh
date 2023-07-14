@@ -7,7 +7,7 @@ export BUILD_USERNAME=ozip
 export BUILD_HOSTNAME=ozip
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-m bacon
+mmma package/apps/Settings
 
 # Exit
 exit 0
