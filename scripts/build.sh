@@ -3,8 +3,7 @@ cd ~
 
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=ozip
-export BUILD_HOSTNAME=ozip
+export KBUILD_BUILD_USER=mitsuaa
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
 make bacon -j12
