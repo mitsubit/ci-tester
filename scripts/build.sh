@@ -7,7 +7,7 @@ export BUILD_USERNAME=ozip
 export BUILD_HOSTNAME=ozip
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-mmma packages/apps/Settings
+make bacon -j12
 
 echo "ls current dir:"
 ls -al
