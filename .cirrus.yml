@@ -2,12 +2,14 @@ env:
     CIRRUS_SHELL: bash
 
 task:
-  timeout_in: 480m 
+  timeout_in: 240m 
   name: "CI Docker Build Test"
   container:
       image: ghcr.io/ozipoetra/docker:main
       cpu: 8
       memory: 32
+  check_script:
+      - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/check.sh | bash
   sync_script:
       - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/sync.sh | bash
   build_script:
