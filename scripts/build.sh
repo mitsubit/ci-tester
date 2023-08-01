@@ -2,11 +2,10 @@
 cd ~
 
 . build/envsetup.sh
-export ALLOW_MISSING_DEPENDENCIES=true
-export KBUILD_BUILD_USER=mitsuaa
+export KBUILD_BUILD_USER=mitsu00
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-make bacon -j12
+mka bacon
 
 echo "ls current dir:"
 ls -al
