@@ -4,7 +4,7 @@ cd ~
 . build/envsetup.sh
 export KBUILD_BUILD_USER=mitsu00
 export TZ=Asia/Jakarta
-lunch arrow_merlinx-user
+lunch lineage_merlinx-user
 m bacon
 
 echo "ls current dir:"
