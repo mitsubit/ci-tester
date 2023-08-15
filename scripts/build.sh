@@ -3,7 +3,7 @@ cd ~
 
 . build/envsetup.sh
 export TZ=Asia/Jakarta
-lunch arrow_merlinx-user
+lunch lineage_merlinx-user
 mka bacon
 #m bootimage
 
