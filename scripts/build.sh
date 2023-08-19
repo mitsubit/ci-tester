@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~
+export CCACHE_DISABLE=1
 
 . build/envsetup.sh
 export TZ=Asia/Jakarta
