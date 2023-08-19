@@ -9,7 +9,7 @@ df -h
 echo "-----------------"
 echo ""
 echo "clang check: "
-ls /root/prebuilts/clang/host/linux-x86/clang-r450784d
+ls /root/prebuilts/clang/host/linux-x86/
 
 
 exit 0
