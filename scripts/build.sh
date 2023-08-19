@@ -4,7 +4,7 @@ cd ~
 . build/envsetup.sh
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-mka bacon -jX
+make bacon -j16
 #m bootimage
 
 echo "ls current dir:"
