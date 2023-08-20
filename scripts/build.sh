@@ -4,7 +4,7 @@ export CCACHE_DISABLE=1
 
 . build/envsetup.sh
 export TZ=Asia/Jakarta
-lunch lineage_merlinx-user
+lunch lineage_merlinx-eng
 mka bacon
 #m bootimage
 
