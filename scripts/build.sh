@@ -4,8 +4,8 @@ export CCACHE_DISABLE=1
 
 . build/envsetup.sh
 export TZ=Asia/Jakarta
-lunch aosp_merlinx-user
-m droid
+lunch lineage_merlinx-user
+mka bacon
 #m bootimage
 
 echo "ls current dir:"
