@@ -5,7 +5,7 @@ export CCACHE_DISABLE=1
 . build/envsetup.sh
 export TZ=Asia/Jakarta
 lunch lineage_merlinx-user
-make bacon -j32
+m bacon
 #m bootimage
 
 echo "ls current dir:"
