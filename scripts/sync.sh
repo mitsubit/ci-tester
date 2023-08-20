@@ -3,7 +3,7 @@
 # Change to the Home Directory
 cd ~
 
-repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platform/manifest -b android-13.0.0_r74
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 git clone https://github.com/mitsu00/local_manifest.git --depth=1 -b ci .repo/local_manifests
 repo sync -qc --no-clone-bundle --optimized-fetch --prune --force-sync --fail-fast -j8
 
