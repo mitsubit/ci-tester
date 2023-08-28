@@ -2,17 +2,18 @@ env:
     CIRRUS_SHELL: bash
 
 task:
-  timeout_in: 240m 
+  timeout_in: 120m 
   name: "CI Docker Build Test"
   container:
-      image: ghcr.io/ozipoetra/docker:main
+      image: ghcr.io/ozipoetra/docker:v1.0.3
       cpu: 8
       memory: 32
+      greedy: true
   check_script:
-      - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/check.sh | bash
+      - curl -Ls https://raw.githubusercontent.com/mitsuav/ci-tester/main/scripts/check.sh | bash
   sync_script:
-      - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/sync.sh | bash
+      - curl -Ls https://raw.githubusercontent.com/mitsuav/ci-tester/main/scripts/sync.sh | bash
   build_script:
-      - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/build.sh | bash
+      - curl -Ls https://raw.githubusercontent.com/mitsuav/ci-tester/main/scripts/build.sh | bash
   upload_script:
-      - curl -Ls https://raw.githubusercontent.com/ozipoetra/ci-tester/main/scripts/upload.sh | bash
+      - curl -Ls https://raw.githubusercontent.com/mitsuav/ci-tester/main/scripts/upload.sh | bash
