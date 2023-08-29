@@ -5,8 +5,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 . build/envsetup.sh
 export TZ=Asia/Jakarta
-lunch lineage_merlinx-user
-mka bacon
+lunch evolution_merlinx-user
+mka evolution
 #m bootimage
 
 echo "ls current dir:"
