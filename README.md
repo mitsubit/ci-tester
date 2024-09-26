@@ -1,5 +1,5 @@
 # CI Test 
-A Free CI to test a Build
+A Free CI to test a Buil
 
 ## How to Use?
 ### - Fork and Build
